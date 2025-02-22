@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>happy birthday, baby</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            cursor: url('custom-cursor.png'), auto;
+        }
+        .hidden-message {
+            display: none;
+        }
+        .reveal:hover .hidden-message {
+            display: inline;
+        }
+        .gallery-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow: hidden;
+            height: 300px;
+        }
+        .gallery-container img {
+            width: 150px;
+            margin: 10px;
+            animation: scroll 6s infinite linear;
+        }
+        @keyframes scroll {
+            0% { transform: translateY(100%); }
+            100% { transform: translateY(-100%); }
+        }
+        #gift-button, #letter-button {
+            transition: transform 0.3s ease-in-out;
+        }
+        #gift-button:hover, #letter-button:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <iframe 
+        id="yt-player"
+        width="0" height="0"
+        src="https://www.youtube.com/embed/NmopYuF4BzY?autoplay=1&loop=1&playlist=NmopYuF4BzY&mute=1"
+        frameborder="0" allow="autoplay">
+    </iframe>
+
+    <header>
+        <h1>Happy Birthday, [Best Friend's Name]!</h1>
+        <p>A special surprise just for you.</p>
+    </header>
+
+    <section id="gallery">
+        <h2>literally us</h2>
+        <div class="gallery-container left">
+            <img src="duo1.jpg" alt="Duo 1">
+            <img src="duo2.jpg" alt="Duo 2">
+            <img src="duo3.jpg" alt="Duo 3">
+        </div>
+        <div class="gallery-container right">
+            <img src="duo4.jpg" alt="Duo 4">
+            <img src="duo5.jpg" alt="Duo 5">
+            <img src="duo6.jpg" alt="Duo 6">
+        </div>
+    </section>
+
+    <section id="gift">
+        <h2>gift</h2>
+        <p>can't wait to troll killers with you </p>
+        <button id="gift-button">🎁</button>
+        <p id="gift-code" class="hidden-message">[PS Plus Code Here]</p>
+    </section>
+
+    <section id="letter">
+        <h2>for my love 💌</h2>
+        <button id="letter-button">✉️ Open Letter</button>
+        <p id="letter-content" class="hidden-message">Dear [Best Friend's Name], [Your heartfelt letter goes here...]</p>
+    </section>
+
+    <footer>
+        <p>by dloo3</p>
+    </footer>
+
+    <script>
+        document.getElementById("letter-button").addEventListener("click", function() {
+            document.getElementById("letter-content").style.display = "block";
+        });
+
+        document.getElementById("gift-button").addEventListener("click", function() {
+            document.getElementById("gift-code").style.display = "block";
+        });
+    </script>
+</body>
+</html>
