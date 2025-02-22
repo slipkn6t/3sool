@@ -4,38 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Birthday, Bestie!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bentham&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
+            background-color: #f1cee2;
+            font-family: 'Bentham', serif;
             cursor: url('custom-cursor.png'), auto;
+            text-align: center;
         }
-        .hidden-message {
-            display: none;
-        }
-        .reveal:hover .hidden-message {
-            display: inline;
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 90vh;
+            padding: 20px;
         }
         .gallery-container {
+            width: 150px;
+            height: 300px;
+            overflow: hidden;
             display: flex;
             flex-direction: column;
             align-items: center;
-            overflow: hidden;
-            height: 300px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .gallery-container.left {
+            left: 5%;
+        }
+        .gallery-container.right {
+            right: 5%;
         }
         .gallery-container img {
-            width: 150px;
-            margin: 10px;
+            width: 100%;
+            display: block;
             animation: scroll 6s infinite linear;
         }
         @keyframes scroll {
             0% { transform: translateY(100%); }
             100% { transform: translateY(-100%); }
         }
-        #gift-button, #letter-button {
+        .interactive-img {
+            width: 120px;
+            cursor: pointer;
             transition: transform 0.3s ease-in-out;
         }
-        #gift-button:hover, #letter-button:hover {
+        .interactive-img:hover {
             transform: scale(1.1);
+        }
+        .hidden-message {
+            display: none;
         }
     </style>
 </head>
@@ -47,37 +67,23 @@
         frameborder="0" allow="autoplay">
     </iframe>
 
-    <header>
-        <h1>Happy Birthday, [Best Friend's Name]!</h1>
-        <p>A special surprise just for you.</p>
-    </header>
-
-    <section id="gallery">
-        <h2>Iconic Duos Like Us 🎬</h2>
+    <h1>Happy Birthday!</h1>
+    
+    <div class="container">
         <div class="gallery-container left">
             <img src="duo1.jpg" alt="Duo 1">
             <img src="duo2.jpg" alt="Duo 2">
             <img src="duo3.jpg" alt="Duo 3">
         </div>
+
+        <img src="envelope.png" id="letter-button" class="interactive-img" alt="Envelope Button">
+
         <div class="gallery-container right">
             <img src="duo4.jpg" alt="Duo 4">
             <img src="duo5.jpg" alt="Duo 5">
             <img src="duo6.jpg" alt="Duo 6">
         </div>
-    </section>
-
-    <section id="gift">
-        <h2>Your Gift 🎮</h2>
-        <p>Here's a PS Plus gift card so we can game together!</p>
-        <button id="gift-button">🎁</button>
-        <p id="gift-code" class="hidden-message">[PS Plus Code Here]</p>
-    </section>
-
-    <section id="letter">
-        <h2>A Letter Just for You 💌</h2>
-        <button id="letter-button">✉️ Open Letter</button>
-        <p id="letter-content" class="hidden-message">Dear [Best Friend's Name], [Your heartfelt letter goes here...]</p>
-    </section>
+    </div>
 
     <footer>
         <p>Made with love by Miko 💖</p>
@@ -85,11 +91,7 @@
 
     <script>
         document.getElementById("letter-button").addEventListener("click", function() {
-            document.getElementById("letter-content").style.display = "block";
-        });
-
-        document.getElementById("gift-button").addEventListener("click", function() {
-            document.getElementById("gift-code").style.display = "block";
+            window.location.href = "letter.html";
         });
     </script>
 </body>
