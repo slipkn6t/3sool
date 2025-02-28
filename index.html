@@ -144,6 +144,21 @@
                 player.src = src.replace("autoplay=0", "autoplay=1").replace("mute=1", "mute=0");
             }
         });
+        document.addEventListener("DOMContentLoaded", function() {
+    var letterButton = document.getElementById("letter-button");
+    var letterBox = document.getElementById("letter-box");
+
+    if (letterButton && letterBox) {
+        letterButton.style.cursor = "pointer";
+        letterButton.addEventListener("click", function() {
+            console.log("Dove clicked!"); // Debugging check
+            letterBox.classList.toggle("open");
+        });
+    } else {
+        console.error("Letter button or letter box not found.");
+    }
+});
+
         
         document.getElementById("letter-button").style.cursor = "pointer";
 document.getElementById("letter-button").addEventListener("click", function() {
