@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>happy birfday 3sool!!</title>
+    <title>Happy Birthday, Bestie!</title>
     <link href="https://fonts.googleapis.com/css2?family=Bentham&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <style>
@@ -78,7 +78,7 @@
         .letter-container:hover .letter {
             opacity: 1;
         }
-    .gift-container:hover .gift-code { opacity: 1; }
+    .gift-container:hover .gift-code { opacity: 1; visibility: visible; }
 </style>
 </head>
 <body>
@@ -89,7 +89,7 @@
         frameborder="0" allow="autoplay">
     </iframe>
 
-    <h1>happy birfday!! <3</h1>
+    <h1>Happy Birthday!</h1>
     
     <img src="music.gif" id="music-button" class="vinyl-button" alt="Play Music" style="position: absolute; top: 50px; right: 40px; width: 120px;">
     
@@ -111,7 +111,7 @@
             </div>
         <div class="gift-container" style="position: relative; display: inline-block; margin-top: -40px;">
             <img src="doveletter.png" id="gift-button" class="gift-dove" alt="Gift Button" style="width: 150px; cursor: pointer;">
-            <span class="gift-code" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(255, 255, 255, 0.8); padding: 5px 10px; border-radius: 5px; font-size: 18px; font-weight: bold; color: #a83232; opacity: 0; transition: opacity 0.3s ease-in-out;">LHKB-DPQX-NN66</span>
+            <span class="gift-code" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(255, 255, 255, 0.8); padding: 5px 10px; border-radius: 5px; font-size: 18px; font-weight: bold; color: #a83232; opacity: 0; visibility: hidden; transition: opacity 0.3s ease-in-out;">LHKB-DPQX-NN66</span>
         </div>
     </div>
     <div class="polaroid-container">
@@ -121,6 +121,10 @@
         </div>
     </div>
 
+    
+<script>
+        
+    </script>
 <script>
         document.getElementById("music-button").addEventListener("click", function() {
             var player = document.getElementById("yt-player");
