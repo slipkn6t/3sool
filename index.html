@@ -160,6 +160,21 @@
 });
             
         });
+            document.addEventListener("DOMContentLoaded", function() {
+            var letterButton = document.getElementById("letter-button");
+            var letterBox = document.getElementById("letter-box");
+            var letterContent = document.getElementById("letter-content");
+            
+            if (letterButton && letterBox && letterContent) {
+                letterButton.style.cursor = "pointer";
+                letterButton.addEventListener("click", function() {
+                    console.log("Dove clicked!"); // Debugging
+                    letterBox.classList.toggle("open");
+                });
+            } else {
+                console.error("Letter button, letter box, or letter content not found.");
+            }
+        });
     </script>
 </body>
 </html>
