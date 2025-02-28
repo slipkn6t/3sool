@@ -75,11 +75,30 @@
             transition: opacity 0.6s ease-in-out;
             box-shadow: none;
         }
-        .letter-container:hover .letter {
-            opacity: 1;
+        .gift-container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-    .gift-dove:hover + .gift-code { opacity: 1; visibility: visible; }
-</style>
+        .gift-dove {
+            width: 150px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+        .gift-code {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+        }
+        .gift-container:hover .gift-dove {
+            transform: translateY(-20px);
+        }
+        .gift-container:hover .gift-code {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
 </head>
 <body>
     <iframe 
@@ -101,38 +120,30 @@
         </div>
         
         <div class="letter-container" id="letter-box">
-            
             <div class="letter" id="letter-content">
                 <p>my dearest love,</p>
-                <p>i’ve been known to fill pages upon pages whenever prompted, but today i find myself frozen. there is little in any dictionary that can paint the ink in my heart that spells out your name. i find myself at a loss for words regarding you more than anything else in this world. nonetheless, i will try.</p>
-                <p>a handful of years ago, you knocked on my door. i’ve felt a hand on my shoulder ever since, toying with my collarbone & vindicating all that is to my life. it held reassurance, love… gestures of affection that warmed my heart with laughter & bliss that i was once a stranger to. strings of avoidance could tug on me, but that hand is always there, holding me in place & reminding me where my love belongs.</p>
-                <p>i cannot imagine a more fruitful connection, one of true understanding & persistence. my words no longer slip into a well or dry under the scorch of the sun, uttered hopelessly into the air. instead, they cascade from my river to yours, honing the most tenderhearted empathy. i can say i am grateful for you, but that is only because no other phrase undoes the labyrinthine web of feelings i extend towards you. indeed, i am grateful. i am indebted above all, because there is no kindness like yours on this earth & all will fail to repay it. you are a blessing, in my world & to this lifetime, & i am beyond lucky to watch a blessing so profound grow another year older. happy birthday.</p>
-                <p>i love you most ardently,<br>dloo3.</p>
+                <p>happy birthday message...</p>
             </div>
-         <div class="gift-container">
-            <img src="doveletter.png" id="gift-button" class="gift-dove" alt="Gift Button" style="width: 150px; cursor: pointer;">
-            <span class="gift-code">LHKB-DPQX-NN66</span>
+            <div class="gift-container">
+                <img src="doveletter.png" id="gift-button" class="gift-dove" alt="Gift Button">
+                <span class="gift-code">LHKB-DPQX-NN66</span>
+            </div>
         </div>
-    </div>
-    <div class="polaroid-container">
+        <div class="polaroid-container">
             <div class="polaroid"><img src="mary.jpg" alt="Red Dead Duo"></div>
             <div class="polaroid"><img src="adaluis.jpg" alt="Resident Evil Duo"></div>
             <div class="polaroid"><img src="bateman.jpg" alt="American Psycho Duo"></div>
         </div>
     </div>
-
     
 <script>
-        
-    </script>
-<script>
-        document.getElementById("music-button").addEventListener("click", function() {
-            var player = document.getElementById("yt-player");
-            var src = player.src;
-            if (src.includes("autoplay=0")) {
-                player.src = src.replace("autoplay=0", "autoplay=1").replace("mute=1", "mute=0");
-            }
-        });
+    document.getElementById("music-button").addEventListener("click", function() {
+        var player = document.getElementById("yt-player");
+        var src = player.src;
+        if (src.includes("autoplay=0")) {
+            player.src = src.replace("autoplay=0", "autoplay=1").replace("mute=1", "mute=0");
+        }
+    });
 </script>
 </body>
 </html>
