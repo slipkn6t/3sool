@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            background-color: #ffebee;
-            font-family: 'Bentham', serif;
-            color: #b71c1c;
+            background-color: #ffe6e6;
+            font-family: 'Cormorant Garamond', serif;
+            color: #a83232;
             cursor: url('esnupi.png'), auto;
-            text-align: center;
+            text-align: center; max-width: 90%; margin: auto;
         }
         .container {
             display: flex;
@@ -27,13 +27,13 @@
             gap: 20px;
         }
         .polaroid {
-            background: #ffffff; border: 3px solid rgba(183, 28, 28, 0.5);
+            background: #ffffff; border: 2px solid rgba(183, 28, 28, 0.3);
             padding: 10px;
             box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
             width: 200px;
             display: inline-block;
             text-align: center;
-            transition: transform 0.3s ease-in-out;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
             position: relative;
         }
         .polaroid img {
@@ -90,7 +90,10 @@
             transform: translateY(-50%) scale(1);
             opacity: 1;
         }
-    </style>
+    .dove-hover:hover { transform: scale(1.05) rotate(-2deg); }
+        .polaroid:hover { transform: scale(1.2) rotate(0deg); box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.2); }
+        .letter { max-width: 350px; height: auto; padding: 30px; }
+        </style>
 </head>
 <body>
     <iframe 
