@@ -10,7 +10,7 @@
         body {
             background-color: #f1cee2;
             font-family: 'Bentham', serif;
-            color: #d9d4d7;
+            color: #5c3a4d; /* Changed to deep plum for better contrast */
             cursor: url('custom-cursor.png'), auto;
             text-align: center;
         }
@@ -23,7 +23,7 @@
         }
         .gallery-container {
             width: 150px;
-            height: 300px;
+            height: 400px; /* Increased height to avoid cutting off images */
             overflow: hidden;
             display: flex;
             flex-direction: column;
@@ -41,6 +41,7 @@
         .gallery-container img {
             width: 100%;
             display: block;
+            margin-bottom: 10px; /* Added spacing between images */
             animation: scroll 6s infinite linear;
         }
         @keyframes scroll {
@@ -80,17 +81,17 @@
     
     <div class="container">
         <div class="gallery-container left">
-            <img src="duo1.jpg" alt="Duo 1">
-            <img src="duo2.jpg" alt="Duo 2">
-            <img src="duo3.jpg" alt="Duo 3">
+            <img src="images/duo1.jpg" alt="Duo 1">
+            <img src="images/duo2.jpg" alt="Duo 2">
+            <img src="images/duo3.jpg" alt="Duo 3">
         </div>
 
-        <img src="envelope.png" id="letter-button" class="interactive-img" alt="Envelope Button">
+        <img src="images/envelope.png" id="letter-button" class="interactive-img" alt="Envelope Button">
 
         <div class="gallery-container right">
-            <img src="duo4.jpg" alt="Duo 4">
-            <img src="duo5.jpg" alt="Duo 5">
-            <img src="duo6.jpg" alt="Duo 6">
+            <img src="images/duo4.jpg" alt="Duo 4">
+            <img src="images/duo5.jpg" alt="Duo 5">
+            <img src="images/duo6.jpg" alt="Duo 6">
         </div>
     </div>
 
