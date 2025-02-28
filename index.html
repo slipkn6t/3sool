@@ -14,13 +14,17 @@
             cursor: url('custom-cursor.png'), auto;
             text-align: center;
         }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            height: 90vh;
+        }
         .polaroid-container {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
+            flex-direction: column;
             gap: 20px;
-            padding: 20px;
         }
         .polaroid {
             background: white;
@@ -59,17 +63,30 @@
 
     <h1>Happy Birthday!</h1>
     
-    <div class="polaroid-container">
-        <div class="polaroid"><img src="mrrobot.jpg" alt="Mr. Robot Duo"></div>
-        <div class="polaroid"><img src="nana.jpg" alt="Nana Handhold"></div>
-        <div class="polaroid"><img src="bbm.jpg" alt="Brokeback Mountain Duo"></div>
-        <div class="polaroid"><img src="mary.jpg" alt="Red Dead Duo"></div>
-        <div class="polaroid"><img src="adaluis.jpg" alt="Resident Evil Duo"></div>
-        <div class="polaroid"><img src="bateman.jpg" alt="American Psycho Duo"></div>
+    <div class="container">
+        <div class="polaroid-container">
+            <div class="polaroid"><img src="mrrobot.jpg" alt="Mr. Robot Duo"></div>
+            <div class="polaroid"><img src="nana.jpg" alt="Nana Handhold"></div>
+            <div class="polaroid"><img src="bbm.jpg" alt="Brokeback Mountain Duo"></div>
+        </div>
+        
+        <img src="envelope.png" id="letter-button" class="interactive-img" alt="Envelope Button" style="width: 120px; cursor: pointer; transition: transform 0.3s ease-in-out;">
+        
+        <div class="polaroid-container">
+            <div class="polaroid"><img src="mary.jpg" alt="Red Dead Duo"></div>
+            <div class="polaroid"><img src="adaluis.jpg" alt="Resident Evil Duo"></div>
+            <div class="polaroid"><img src="bateman.jpg" alt="American Psycho Duo"></div>
+        </div>
     </div>
 
     <footer>
         <p>Made with love by Miko 💖</p>
     </footer>
+
+    <script>
+        document.getElementById("letter-button").addEventListener("click", function() {
+            window.location.href = "letter.html";
+        });
+    </script>
 </body>
 </html>
