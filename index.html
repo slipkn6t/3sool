@@ -11,7 +11,7 @@
             background-color: #f1cee2;
             font-family: 'Bentham', serif;
             color: #5c3a4d;
-            cursor: url('custom-cursor.png'), auto;
+            cursor: url('esnupi.png'), auto;
             text-align: center;
         }
         .container {
@@ -51,17 +51,27 @@
         .polaroid:nth-child(even) {
             transform: rotate(5deg);
         }
+        .vinyl-button {
+            width: 100px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+        .vinyl-button:hover {
+            transform: scale(1.1) rotate(10deg);
+        }
     </style>
 </head>
 <body>
     <iframe 
         id="yt-player"
         width="0" height="0"
-        src="https://www.youtube.com/embed/NmopYuF4BzY?autoplay=1&loop=1&playlist=NmopYuF4BzY&mute=1"
+        src="https://www.youtube.com/embed/NmopYuF4BzY?autoplay=0&loop=1&playlist=NmopYuF4BzY&mute=1"
         frameborder="0" allow="autoplay">
     </iframe>
 
     <h1>Happy Birthday!</h1>
+    
+    <img src="music.gif" id="music-button" class="vinyl-button" alt="Play Music">
     
     <div class="container">
         <div class="polaroid-container">
@@ -86,6 +96,14 @@
     <script>
         document.getElementById("letter-button").addEventListener("click", function() {
             window.location.href = "letter.html";
+        });
+        
+        document.getElementById("music-button").addEventListener("click", function() {
+            var player = document.getElementById("yt-player");
+            var src = player.src;
+            if (src.includes("autoplay=0")) {
+                player.src = src.replace("autoplay=0", "autoplay=1").replace("mute=1", "mute=0");
+            }
         });
     </script>
 </body>
